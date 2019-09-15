@@ -18,19 +18,18 @@ RUN conda install -y -c conda-forge \
         pyopengl \
         xgboost \
         nbdime
-RUN pip install "urlextract"
-RUN pip install "gym[atari,box2d,classic_control]"
-RUN pip install "tensorflow-hub"
-RUN pip install "tensorflow-serving-api"
-RUN pip install "tfx"
+RUN pip install "urlextract" \
+    "gym[atari,box2d,classic_control]" \
+    "tensorflow-hub" \
+    "tensorflow-serving-api" \
+    "tfx" \
+    "tf-agents-nightly" \
+    "tfds-nightly" \
+    "tfp-nightly" \
+    "tf-nightly-2.0-preview" \
+    "tb-nightly"
 #RUN pip install "tensorflow-addons"
-RUN pip install "tf-agents-nightly"
-RUN pip install "tfds-nightly"
-RUN pip install "tfp-nightly"
-RUN pip uninstall -y tensorflow
-RUN pip uninstall -y tensorboard
-RUN pip install "tf-nightly-2.0-preview"
-RUN pip install "tb-nightly"
+RUN pip uninstall -y tensorflow tensorboard
 
 
 ARG username
